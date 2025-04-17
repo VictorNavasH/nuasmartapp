@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 30% 98%; /* Blanco roto sutil */
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 187 98% 39%; /* #02b1c4 */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 203 64% 31%; /* #227c9d */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 187 98% 39%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 187 98% 39%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 203 64% 31%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 187 98% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-secondary-blue;
+  }
+  p,
+  span {
+    @apply text-secondary-blue;
+  }
+}
+
+@layer components {
+  /* Añadir nuevas clases para el estilo de borde superior */
+  .nua-card-bordered {
+    @apply border-t-4 border-t-primary-light/70;
+  }
+
+  .nua-section-header {
+    @apply bg-gradient-to-r from-white to-primary-light/10 py-2 px-4 rounded-t-lg;
+  }
+
+  /* Actualizar las clases existentes */
+  .nua-card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-4 border border-border border-t-4 border-t-primary-light/70;
+  }
+
+  .card-shadow {
+    @apply shadow-md hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .nua-section {
+    @apply p-6 rounded-lg;
+  }
+
+  .nua-stat-card {
+    @apply nua-card flex flex-col gap-2;
+  }
+
+  .nua-stat-value {
+    @apply font-bold text-3xl text-text-primary;
+  }
+
+  .nua-stat-label {
+    @apply text-sm text-text-secondary;
+  }
+
+  .nua-trend-positive {
+    @apply text-success flex items-center gap-1;
+  }
+
+  .nua-trend-negative {
+    @apply text-danger flex items-center gap-1;
+  }
+
+  .nua-trend-neutral {
+    @apply text-text-secondary flex items-center gap-1;
+  }
+
+  /* Actualizar el color de la barra de progreso */
+  .nua-progress-bar {
+    @apply h-2 rounded-full bg-[#97F3EA];
+  }
+
+  .nua-button-primary {
+    @apply bg-primary-light hover:bg-primary-light/90 text-secondary-blue;
+  }
+}
+
+/* Añadir estilos globales para todas las barras de progreso */
+.h-1.rounded-full.bg-primary,
+.h-2.rounded-full.bg-primary,
+.h-3.rounded-full.bg-primary,
+\
+.h-1.5.rounded-full.bg-primary {
+  background-color: #7BDFF2 !important;
+}
+
+/* Eliminar esta regla que sobrescribe los colores del heatmap */
+/* .h-6.rounded-full {
+  background-color: #b2f7ef !important;
+} */
+
+/* Colores para el heatmap de densidad por turno */
+.densidad-baja {
+  background-color: #227c9d !important;
+}
+
+.densidad-media {
+  background-color: #17c3b2 !important;
+}
+
+.densidad-alta {
+  background-color: #ff4797 !important;
+}
+
+.densidad-muy-alta {
+  background-color: #fe6d73 !important;
+}
+
+/* Añadir clases específicas para diferentes tipos de barras de progreso */
+.nua-progress-bar-1 {
+  background-color: #7bdff2 !important;
+}
+
+.nua-progress-bar-2 {
+  background-color: #b2f7ef !important;
+}
+
+.nua-progress-bar-3 {
+  background-color: #eff7f6 !important;
+}
+
+.nua-progress-bar-4 {
+  background-color: #f7d6e0 !important;
+}
+
+.nua-progress-bar-5 {
+  background-color: #f2b5d4 !important;
+}
